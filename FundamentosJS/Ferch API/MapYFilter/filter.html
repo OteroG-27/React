@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemones con Map</title>
+</head>
+
+<body>
+    <h1>Nombres y en url obtenidos con filter</h1>
+    <script>
+        fetch('https://pokeapi.co/api/v2/pokemon/')
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data)
+                let array = [];
+                const nombrePoke = data.results.filter(poke => poke.name !== 'bulbasaur')
+                console.log(nombrePoke)
+                console.log('---------------------------------------------')
+            })
+            .catch(err => console.log(err))
+
+        const obtenerPokemones = async () => {
+            try {
+                const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
+                const { results } = await res.json();
+                const arrayPokemones = results.map(pokemon => pokemon.url)
+                console.log(arrayPokemones);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        obtenerPokemones()
+    </script>
+</body>
+
+</html>
