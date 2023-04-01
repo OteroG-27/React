@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+ const Ttonbu = () => {
+    return(
+        <button className="text-align">Reproducir</button>
+    )
+ }
+ const Online = () => {
+    return (
+        <h1>online</h1>
+    )
+ }
+ const App = () =>{
+    const texto = "Lo apagao lo pinto la music hizo que los dias feos sean lindos Haciendo que lo facil sea dificil y distinto"; 
+    const classs = "text-align"
+    const src = "https://w7.pngwing.com/pngs/226/796/png-transparent-milo-hd-logo.png"
+    const user = false;
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
-
-export default App
+    return (
+        <>
+            <h1 className="text-align">Hola Carlos Pensando En: </h1>
+            <h1 className={classs}>{texto}</h1>
+            <div className="text-align">
+                <img src={src} alt="img" />
+                <br />
+                <br />
+                <Ttonbu />
+                <br />
+                {user ? <Online /> : ""}
+            </div>
+        </>
+        
+    )
+ }
+ export default App
