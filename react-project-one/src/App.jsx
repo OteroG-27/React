@@ -1,31 +1,57 @@
- const Ttonbu = () => {
+import imgUno from '../src/assets/img/morning.png';
+const Ttonbu = (props) => {
+    console.log(props);
     return(
-        <button className="text-align">Reproducir</button>
+        <button className="text-align">{props.text}</button>
     )
  }
  const Online = () => {
     return (
-        <h1>online</h1>
+        <div>
+            <h2>online</h2>
+        </div>
+    )
+ }
+ const Offline = () => {
+    return (
+        <div>
+            <h2>Offline</h2>
+        </div>
     )
  }
  const App = () =>{
     const texto = "Lo apagao lo pinto la music hizo que los dias feos sean lindos Haciendo que lo facil sea dificil y distinto"; 
     const classs = "text-align"
-    const src = "https://w7.pngwing.com/pngs/226/796/png-transparent-milo-hd-logo.png"
-    const user = false;
+    const user = true;
+    //console.log(imgUno);
 
+    const frutas = ['🍓', '🍌', '🥝']
     return (
         <>
             <h1 className="text-align">Hola Carlos Pensando En: </h1>
             <h1 className={classs}>{texto}</h1>
             <div className="text-align">
-                <img src={src} alt="img" />
+                <img src={imgUno} alt="Portatada de Morning" />
                 <br />
                 <br />
-                <Ttonbu />
+                <Ttonbu text='Reproducir 1' />
+                <Ttonbu text='Reproducir 2' />
+                <Ttonbu text='Reproducir 3' />
                 <br />
-                {user ? <Online /> : ""}
+                {/*Operadores Ternaros */}
+                {user ? <Online />: <Offline />}
+                {user && <Online />} {/*Es forma es para saltarse el else*/} 
+
             </div>
+            <ul className='text-align'>
+                {
+                    frutas.map((fruta, index) => (
+                        <li key={index}>
+                            {fruta}
+                        </li>
+                    ))
+                }
+            </ul>
         </>
         
     )
