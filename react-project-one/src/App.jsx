@@ -1,4 +1,5 @@
 import imgUno from '../src/assets/img/morning.png';
+import Fruit from './Fruit';
 const Ttonbu = (props) => {
     console.log(props);
     return(
@@ -19,12 +20,12 @@ const Ttonbu = (props) => {
         </div>
     )
  }
+
  const App = () =>{
     const texto = "Lo apagao lo pinto la music hizo que los dias feos sean lindos Haciendo que lo facil sea dificil y distinto"; 
     const classs = "text-align"
     const user = true;
-    //console.log(imgUno);
-
+    console.log(imgUno);
     const frutas = ['🍓', '🍌', '🥝']
     return (
         <>
@@ -41,17 +42,15 @@ const Ttonbu = (props) => {
                 {/*Operadores Ternaros */}
                 {user ? <Online />: <Offline />}
                 {user && <Online />} {/*Es forma es para saltarse el else*/} 
-
             </div>
             <ul className='text-align'>
                 {
                     frutas.map((fruta, index) => (
-                        <li key={index}>
-                            {fruta}
-                        </li>
+                        <Fruit key={index} frutas={fruta} />
                     ))
                 }
             </ul>
+            
         </>
         
     )
